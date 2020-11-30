@@ -1,0 +1,83 @@
+nav{
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-right: 20px;
+    
+}
+
+ul{
+    padding-left: 5px;
+}
+
+.container{
+    display: flex;
+    height: 100%;
+    background-color: rgb(35, 42, 58);
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+}
+
+.nav-title{
+    padding: 10px 5px 5px 5px;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+}
+
+
+
+.list-item{
+    padding: 10px 10px;
+    position: relative; /* for orange effect of ::before happen only inside this div */
+    font-family: 'Major Mono Display', monospace;
+    font-size: 12px;
+}
+
+.list-item:hover a{
+    color: orange;
+    transition: color 0.2s;
+  
+}
+
+a:hover{
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.list-item:hover svg{
+    fill: orange;
+}
+
+
+.list-item::before{
+    content: '';
+    background-color: orange;
+    position: absolute;
+    width: 3px;
+    left: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    transform: scaleY(0); /* effect of vertical growth */
+
+    transition: transform 0.2s, opacity 0.2s; 
+}
+
+.list-item:hover::before{
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.nav-title svg{
+    margin-right: 10px;
+}
+
+li svg{
+    margin-right: 10px;
+}
